@@ -36,7 +36,47 @@ class GraduateStudent extends Student {
 2. การจัดการข้อมูล (Data Management)
 เทคนิคที่ใช้:
 
-Generic Types
+1.Generic Types
+```yaml
+class Database<T> {
+    private entries: T[] = [];
+    addEntry(entry: T): void {
+        this.entries.push(entry);
+    }
+}
+```
+ใช้ Generic <T> เพื่อให้คลาสสามารถทำงานกับข้อมูลได้หลายประเภท
+รักษา Type Safety ในการจัดการข้อมูล
+
+
+2.Interface Design
+```yaml
+interface Teacher {
+    name: string;
+    subject: string;
+    students: Student[];
+}
+```
+สร้าง Interface เพื่อกำหนดโครงสร้างข้อมูล
+ใช้ Type Checking เพื่อป้องกันข้อผิดพลาด
+
+3. การจัดการ Asynchronous Operations
+เทคนิคที่ใช้:
+```yaml
+async function fetchStudentData(): Promise<StudentData> {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({
+                name: "John Doe",
+                grades: [85, 92, 78]
+            });
+        }, 1000);
+    });
+}
+```
+```yaml
+
+```
 ```yaml
 
 ```
